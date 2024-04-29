@@ -1,4 +1,4 @@
-class SecretariaEletronica {
+export class SecretariaEletronica {
     private _status: Boolean;
 
     constructor(status: Boolean) {

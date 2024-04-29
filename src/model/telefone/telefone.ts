@@ -1,4 +1,6 @@
-class Telefone {
+import { Linha } from "../linha/linha";
+
+export class Telefone {
     private _ligado: Boolean;
     private _linha: Linha;
 

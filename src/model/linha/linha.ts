@@ -1,29 +1,35 @@
 import { parse, format } from 'telefone';
 
-class Linha {
-    private _numero: String;
+export class Linha {
+    private _numero: string;
     private _ocupada: boolean;
 
-    constructor(numero: String, ocupada: boolean) {
-       this._numero = numero;
-        this._ocupada = ocupada;
+    constructor(numero: string, ocupada: boolean) {
+        if (this.checkNumeroLinha(numero) === null) {
+            console.error('Numero de linha inserido é inválido');
+            this._numero = '0';
+            this._ocupada = false;
+        } else {
+            this._numero = numero;
+            this._ocupada = ocupada;
+        }
     }
 
     /**
      * Getter numero
-     * @return {String}
+     * @return {string}
      */
-	public get numero(): String {
-		return this._numero;
-	}
+    public get numero(): string {
+        return this._numero;
+    }
 
     /**
      * Setter numero
-     * @param {String} value
+     * @param {string} value
      */
-	public set numero(value: String) {
-		this._numero = value;
-	}
+    public set numero(value: string) {
+        this._numero = value;
+    }
 
     /**
      * Getter ocupada
@@ -45,9 +51,7 @@ class Linha {
         //TODO Fazer metodo discar
     }
 
-    private checkNumeroLinha(numeroLinha: String){
-
+    private checkNumeroLinha(numeroLinha: string): string | null {
+        return parse(numeroLinha) ? numeroLinha : null;
     }
-
-
 }
