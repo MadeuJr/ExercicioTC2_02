@@ -46,7 +46,7 @@ export class Linha {
         this._ocupada = value;
     }
 
-    public discar(numeroLinha: number) {
+    public discar(numeroLinha: string) {
         //TODO Fazer metodo discar
     }
 

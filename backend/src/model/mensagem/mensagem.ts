@@ -2,7 +2,7 @@ import { SecretariaEletronica } from "../secretariaEletronica/secretariaEletroni
 
 export class Mensagem {
     private _conteudo: String;
-    private _secretariaDonaMensagem: SecretariaEletronica | null;
+    private _secretariaDonaMensagem: SecretariaEletronica;
 
     constructor(conteudo: String, secretaria: SecretariaEletronica) {
         this._conteudo = conteudo;
@@ -13,7 +13,7 @@ export class Mensagem {
      * Getter secretariaDonaMensagem
      * @return {SecretariaEletronica}
      */
-	public get secretariaDonaMensagem(): SecretariaEletronica | null{
+	public get secretariaDonaMensagem(): SecretariaEletronica{
 		return this._secretariaDonaMensagem;
 	}
 
