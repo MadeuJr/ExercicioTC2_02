@@ -1,5 +1,11 @@
-import { Linha } from "./model/linha/linha";
+import { LinhaService } from "./service/linha/linhaService";
+import { TelefoneService } from "./service/telefone";
 
-const linhaMock = new Linha('11912345678',false)
+const servicoLinhas = new LinhaService();
+const servicoTelefones = new TelefoneService(servicoLinhas);
 
-console.log(linhaMock);
+servicoLinhas.newLinha("12345678910", false)
+servicoTelefones.newTelefone(true, null)
+
+console.log(servicoLinhas.getLinhas());
+console.log(servicoTelefones.getTelefones())

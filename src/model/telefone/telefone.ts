@@ -2,12 +2,23 @@ import { Linha } from "../linha/linha";
 
 export class Telefone {
     private _ligado: Boolean;
-    private _linha: Linha;
+    private _linha: Linha | null;
+    private _conexao: number;
 
-    constructor(ligado: Boolean, linha: Linha) {
+    constructor(ligado: Boolean, linha: Linha | null, conexao: number) {
         this._ligado = ligado;
         this._linha = linha;
-    }
+        this._conexao = conexao;
+    }  
+
+    /**
+     * Getter conexao
+     * @return {number}
+     */
+	public get conexao(): number {
+		return this._conexao;
+	}
+
 
     /**
      * Getter ligado
@@ -29,7 +40,7 @@ export class Telefone {
      * Getter linha
      * @return {Linha}
      */
-    public get linha(): Linha {
+    public get linha(): Linha | null {
         return this._linha;
     }
 
@@ -37,7 +48,7 @@ export class Telefone {
      * Setter linha
      * @param {Linha} value
      */
-    public set linha(value: Linha) {
+    public set linha(value: Linha | null) {
         this._linha = value;
     }
 

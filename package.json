@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "telefone": "^1.2.4",
-    "typescript": "^5.4.5"
+    "telefone": "^1.2.4"
   }
 }

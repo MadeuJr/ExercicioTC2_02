@@ -1,8 +1,29 @@
+import { Mensagem } from '../mensagem/mensagem';
+import { Telefone } from '../telefone/telefone';
+
 export class SecretariaEletronica {
     private _status: Boolean;
+    private _telefone: Telefone;
 
-    constructor(status: Boolean) {
+    constructor(status: Boolean, telefone: Telefone) {
         this._status = status;
+        this._telefone = telefone;
+    }
+
+    /**
+     * Getter telefone
+     * @return {Telefone}
+     */
+    public get telefone(): Telefone {
+        return this._telefone;
+    }
+
+    /**
+     * Setter telefone
+     * @param {Telefone} value
+     */
+    public set telefone(value: Telefone) {
+        this._telefone = value;
     }
 
     /**
@@ -21,9 +42,7 @@ export class SecretariaEletronica {
         this._status = value;
     }
 
-    public configurar() {
-        //TODO fazer metodo configurar
-    }
+    public configurar(mensagem: Mensagem) {}
 
     public reiniciar() {
         // TODO fazer metodo reiniciar

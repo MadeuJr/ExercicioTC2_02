@@ -5,12 +5,11 @@ export class Linha {
     private _ocupada: boolean;
 
     constructor(numero: string, ocupada: boolean) {
-        if (this.checkNumeroLinha(numero) === null) {
-            console.error('Numero de linha inserido é inválido');
+        if (this.checkNumeroLinha(numero) === false) {
             this._numero = '0';
             this._ocupada = false;
         } else {
-            this._numero = numero;
+            this._numero = format(numero);
             this._ocupada = ocupada;
         }
     }
@@ -51,7 +50,7 @@ export class Linha {
         //TODO Fazer metodo discar
     }
 
-    private checkNumeroLinha(numeroLinha: string): string | null {
-        return parse(numeroLinha) ? numeroLinha : null;
+    private checkNumeroLinha(numeroLinha: string): boolean {
+        return parse(numeroLinha) ? true: false;
     }
 }
