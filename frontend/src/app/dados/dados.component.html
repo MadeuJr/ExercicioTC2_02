@@ -1,1 +1,22 @@
-<p>dados works!</p>
+    <h1>Linhas</h1>
+    <ul>
+      <li *ngFor="let linha of linhas">{{ linha | json }}</li>
+    </ul>
+
+
+
+    <h1>Telefones</h1>
+    <ul>
+      <li *ngFor="let telefone of telefones">{{ telefone | json }}</li>
+    </ul>
+
+    <h1>Secretarias</h1>
+    <ul>
+      <li *ngFor="let secretaria of secretarias">{{ secretaria | json }}</li>
+    </ul>
+
+    <h1>Campainhas</h1>
+    <ul>
+      <li *ngFor="let campainha of campainhas">{{ campainha | json }}</li>
+    </ul>
+
